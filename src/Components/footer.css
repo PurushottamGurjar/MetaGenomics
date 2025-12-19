@@ -1,0 +1,157 @@
+
+.genomics-footer {
+  background: #003366;
+  color:#ffffff;
+  padding: 60px 20px 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-columns {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 60px;
+  padding-bottom: 50px;
+}
+
+.footer-col {
+  display: flex;
+  color:#ffffff;
+  flex-direction: column;
+}
+
+.footer-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color:#ffffff;
+  margin: 0 0 25px 0;
+  padding: 0;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  margin-bottom: 14px;
+  line-height: 1.6;
+}
+
+.footer-links a {
+  color:#ffffff;
+  text-decoration: none;
+  font-size: 15px;
+  transition: opacity 0.3s ease;
+  display: inline;
+}
+
+.footer-links a:hover {
+  opacity: 0.8;
+}
+
+.footer-contact {
+  color:#ffffff;
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.footer-contact p {
+  margin: 0 0 8px 0;
+}
+
+.company-name {
+  font-weight: 600;
+  margin-bottom: 12px !important;
+}
+
+.contact-info {
+  margin-top: 15px !important;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px 0;
+  text-align: center;
+}
+
+.footer-copyright p {
+  color:#ffffff;
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.9;
+}
+
+/* Tablet View */
+@media (max-width: 1024px) {
+  .footer-columns {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+
+/* Mobile View */
+@media (max-width: 768px) {
+  .genomics-footer {
+    padding: 40px 20px 0;
+  }
+
+  .footer-columns {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .footer-heading {
+    font-size: 14px;
+  }
+
+  .footer-links a {
+    font-size: 14px;
+  }
+
+  .footer-contact {
+    font-size: 14px;
+  }
+
+  .footer-copyright {
+    padding: 25px 0;
+  }
+
+  .footer-copyright p {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .genomics-footer {
+    padding: 35px 15px 0;
+  }
+
+  .footer-columns {
+    gap: 30px;
+  }
+
+  .footer-heading {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .footer-links a,
+  .footer-contact {
+    font-size: 13px;
+  }
+
+  .footer-copyright p {
+    font-size: 12px;
+  }
+}
