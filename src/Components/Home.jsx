@@ -1,9 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 import './home.css'
-import Genomic_image from '../assets/Genomics_image_1.png'
 import Genomic from '../assets/Genomics_Blue_image.png'
+import Login from './Login'
 
 const Home = () => {
+  const navigator = useNavigate();
   return (
     <div className="home-wrapper">
       <div className="home-container">
@@ -30,8 +32,8 @@ const Home = () => {
           </ul>
 
           <div className="button-container">
-            <button className="btn btn-primary">Login</button>
-            <button className="btn btn-secondary">Register</button>
+            <button className="btn btn-primary" onClick={()=>navigator('/login')}>Login</button>
+            <button className="btn btn-secondary" onClick={()=>navigator('/register')} >Register</button>
           </div>
         </div>
       </div>

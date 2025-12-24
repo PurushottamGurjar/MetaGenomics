@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './navbar.css';
 
 
 const NavBar = () => {
+  const navigator = useNavigate();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -39,9 +41,9 @@ const NavBar = () => {
         </button>
         
         <div className={`auth-section mobile ${isMenuOpen ? 'active' : ''}`}>
-          <a href="#login">Log In</a>
+          <a onClick={()=>navigator('/login')} >Log In</a>
           <span className="separator">|</span>
-          <a href="#register">Register</a>
+          <a onClick={()=>navigator('/register')}>Register</a>
         </div>
       </div>
     </header>
