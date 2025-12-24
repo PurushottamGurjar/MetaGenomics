@@ -178,4 +178,7 @@
     width: 200px;
     height: 200px;
   }
+  .home-wrapper {
+    padding: 10px;
+  }
 }

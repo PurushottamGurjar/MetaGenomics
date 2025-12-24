@@ -189,4 +189,7 @@
   .left-image-section {
     min-height: 250px;
   }
+  .register-wrapper {
+    padding: 10px;
+  }
 }

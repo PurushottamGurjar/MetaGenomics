@@ -203,4 +203,7 @@
   .left-image-section {
     min-height: 250px;
   }
+  .login-wrapper {
+    padding: 10px;
+  }
 }
