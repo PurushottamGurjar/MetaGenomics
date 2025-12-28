@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import './Login.css'
+import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 import Genomic from '../assets/Genomics_Blue_image.png'
 
 
 const Login = () => {
+  const { login } = useAuth();
   const navigator = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
@@ -18,10 +20,14 @@ const Login = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
-    console.log('Login submitted:', formData)
-    // Add your login logic here
+    try {
+      await login(formData);    // calls backend
+      navigator("/");
+    } catch (err) {
+      alert("Invalid login");
+    }
   }
 
   return (
@@ -71,7 +77,7 @@ const Login = () => {
                 <input type="checkbox" />
                 <span>Remember me</span>
               </label>
-              <a href="#" className="forgot-password">Forgot Password?</a>
+              <a  className="forgot-password">Forgot Password?</a>
             </div>
 
             <button type="submit" className="btn btn-login">Login</button>

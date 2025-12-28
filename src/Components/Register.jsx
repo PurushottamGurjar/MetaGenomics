@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import './Register.css'
 import { useNavigate } from 'react-router-dom';
 import Genomic from '../assets/Genomics_Blue_image.png'
+import { useAuth } from '../context/AuthContext';
+
 
 const Register = () => {
+  const {register}=useAuth();
   const navigator = useNavigate();
   const [formData, setFormData] = useState({
     fullName: '',
@@ -19,16 +22,20 @@ const Register = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault()
     
     if (formData.password !== formData.confirmPassword) {
       alert('Passwords do not match!')
       return
     }
+    try {
+      await register(formData);
+      navigator("/");
+    } catch (err) {
+      alert("Registration failed");
+    }
     
-    console.log('Register submitted:', formData)
-    // Add your registration logic here
   }
 
   return (
