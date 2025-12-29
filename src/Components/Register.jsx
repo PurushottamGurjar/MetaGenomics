@@ -9,7 +9,7 @@ const Register = () => {
   const {register}=useAuth();
   const navigator = useNavigate();
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     password: '',
     confirmPassword: ''
@@ -55,9 +55,9 @@ const Register = () => {
               <input 
                 type="text" 
                 id="fullName"
-                name="fullName"
+                name="name"
                 placeholder="Enter your full name"
-                value={formData.fullName}
+                value={formData.name}
                 onChange={handleChange}
                 required
               />

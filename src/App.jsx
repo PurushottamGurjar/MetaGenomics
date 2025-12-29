@@ -18,7 +18,7 @@ const App = () => {
       <AuthProvider>
         <NavBar/>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<NotFound />} />
           <Route path="/contact" element={<NotFound />} />
           <Route path="/benefits" element={<NotFound />} />
@@ -29,6 +29,7 @@ const App = () => {
 
           <Route element={<ProtectedRoute/>}>
             <Route path="/login-testing" element={<ProtectedTesting/>}/>
+            <Route path="/" element={<Home />} />
           </Route>
 
         </Routes>

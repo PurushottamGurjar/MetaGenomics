@@ -6,89 +6,196 @@
 
 .header {
   background: #ffffff;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  padding: 1rem 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 2rem;
   position: sticky;
   top: 0;
   z-index: 1000;
 }
 
 .header-container {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 2rem;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   max-width: 1400px;
   margin: 0 auto;
+  gap: 2rem;
+  min-height: 50px;
 }
 
 .logo {
-  font-size: 1.8rem;
-  font-weight: bold;
+  font-size: 1.5rem;
+  font-weight: 700;
   color: #2563eb;
   letter-spacing: -0.5px;
   cursor: pointer;
-}
-
-.nav {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 2rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #374151;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-  cursor: pointer;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: bold;
-}
-
-.nav a:hover {
-  color: #074feb;
-}
-
-.auth-section {
-  display: grid;
-  grid-auto-flow: column;
-  gap: 1rem;
-  align-items: center;
-}
-
-.auth-section a {
-  text-decoration: none;
-  color: #2563eb;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: color 0.3s ease;
-  cursor: pointer;
-}
-
-.auth-section a:hover {
-  color: #1d4ed8;
-}
-
-.separator {
-  color: #d1d5db;
+  flex-shrink: 0;
+  line-height: 1;
 }
 
 .mobile-menu-btn {
   display: none;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   cursor: pointer;
   color: #374151;
+  padding: 0.4rem;
+  margin-left: auto;
+  transition: transform 0.2s ease;
 }
 
+.mobile-menu-btn:active {
+  transform: scale(0.95);
+}
+
+.nav {
+  display: flex;
+  gap: 1.75rem;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #374151;
+  font-size: 0.875rem;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+  cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  padding: 0.4rem 0;
+  position: relative;
+}
+
+.nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+}
+
+.nav a:hover {
+  color: #2563eb;
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+/* Desktop Auth Container */
+.auth-container {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.4rem 0.85rem;
+  background: #f8fafc;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.user-info:hover {
+  background: #f1f5f9;
+  border-color: #cbd5e1;
+  transform: translateY(-1px);
+}
+
+.user-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.875rem;
+  box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+  flex-shrink: 0;
+}
+
+.user-name {
+  color: #1e293b;
+  font-weight: 600;
+  font-size: 0.875rem;
+  max-width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.logout-btn,
+.login-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 1.25rem;
+  background: #2563eb;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.logout-btn:hover,
+.login-btn:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+.logout-btn:active,
+.login-btn:active {
+  transform: translateY(0);
+}
+
+.logout-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+/* Mobile Auth - Hidden on desktop */
+.mobile-auth {
+  display: none;
+}
+
+/* Tablet Responsive */
 @media (max-width: 1024px) {
+  .header {
+    padding: 0.65rem 1.5rem;
+  }
+
   .header-container {
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+
+  .logo {
+    font-size: 1.4rem;
   }
 
   .nav {
@@ -96,64 +203,226 @@
   }
 
   .nav a {
-    font-size: 0.9rem;
-    font-weight: bold;
+    font-size: 0.85rem;
+  }
+
+  .user-name {
+    max-width: 100px;
+    font-size: 0.85rem;
+  }
+
+  .user-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.825rem;
+  }
+
+  .logout-btn,
+  .login-btn {
+    padding: 0.45rem 1rem;
+    font-size: 0.85rem;
   }
 }
 
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .header {
-    padding: 1rem;
+    padding: 0.6rem 1rem;
   }
 
   .header-container {
-    grid-template-columns: 1fr auto;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0;
+    min-height: 48px;
+  }
+
+  .logo {
+    font-size: 1.35rem;
+    order: 1;
+    text-align: left;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #e5e7eb;
+    width: calc(100% - 40px);
   }
 
   .mobile-menu-btn {
-    display: block;
+    display: flex;
+    order: 2;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .auth-container {
+    display: none;
   }
 
   .nav {
     display: none;
-    grid-auto-flow: row;
-    gap: 1rem;
-    grid-column: 1 / -1;
-    padding-top: 1rem;
-    border-top: 1px solid #e5e7eb;
+    width: 100%;
+    order: 3;
+    padding: 0.75rem 0 0.5rem 0;
+    margin-top: 0.6rem;
+    gap: 0;
   }
 
   .nav.active {
-    display: grid;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
   }
 
   .nav a {
-    padding: 0.5rem 0;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    font-size: 0.9rem;
+    text-align: left;
+    background: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    color: #1e293b;
+    font-weight: 500;
   }
 
-  .auth-section {
+  .nav a::after {
     display: none;
   }
 
-  .auth-section.mobile {
-    display: none;
-    grid-column: 1 / -1;
-    justify-content: start;
-    padding-bottom: 0.5rem;
+  .nav a:active {
+    background: #f1f5f9;
   }
 
-  .auth-section.mobile.active {
-    display: grid;
+  /* Show mobile auth - positioned after nav links */
+  .mobile-auth {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid #e5e7eb;
+  }
+
+  .mobile-user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: #ffffff;
+    border-radius: 12px;
+    border: 1px solid #e5e7eb;
+    text-align: center;
+  }
+
+  .mobile-user-info .user-avatar {
+    width: 56px;
+    height: 56px;
+    font-size: 1.25rem;
+  }
+
+  .mobile-user-info .user-name {
+    font-size: 0.95rem;
+    max-width: none;
+    color: #1e293b;
+    word-break: break-word;
+    font-weight: 600;
+  }
+
+  .mobile-logout-btn,
+  .mobile-login-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.85rem 1.25rem;
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+  }
+
+  .mobile-logout-btn:active,
+  .mobile-login-btn:active {
+    background: #1d4ed8;
+    transform: scale(0.98);
   }
 }
 
+/* Small Mobile */
 @media (max-width: 480px) {
+  .header {
+    padding: 0.55rem 0.75rem;
+  }
+
   .logo {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.3rem;
+    padding: 0.35rem;
+    right: 0.75rem;
+  }
+
+  .nav.active {
+    gap: 0.6rem;
   }
 
   .nav a {
     font-size: 0.85rem;
+    padding: 0.8rem 0.9rem;
+  }
+
+  .mobile-user-info {
+    padding: 0.85rem;
+  }
+
+  .mobile-user-info .user-avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 1.15rem;
+  }
+
+  .mobile-user-info .user-name {
+    font-size: 0.875rem;
+  }
+
+  .mobile-logout-btn,
+  .mobile-login-btn {
+    font-size: 0.9rem;
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Extra Small Mobile */
+@media (max-width: 360px) {
+  .logo {
+    font-size: 1.15rem;
+  }
+
+  .nav a {
+    font-size: 0.8rem;
+    padding: 0.75rem 0.85rem;
+  }
+
+  .mobile-user-info .user-avatar {
+    width: 46px;
+    height: 46px;
+    font-size: 1.05rem;
+  }
+
+  .mobile-user-info .user-name {
+    font-size: 0.8rem;
+  }
+
+  .mobile-logout-btn,
+  .mobile-login-btn {
+    font-size: 0.85rem;
+    padding: 0.7rem 0.9rem;
   }
 }
