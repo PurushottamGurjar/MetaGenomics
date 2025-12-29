@@ -46,15 +46,17 @@ const NavBar = () => {
         </button>
         
         <nav className={`nav ${isMenuOpen ? 'active' : ''}`}>
-          {navLinks.map((link, index) => (
-            <a 
-              key={index} 
-              href={link.href}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              {link.name}
-            </a>
-          ))}
+          <div className="nav-links">
+            {navLinks.map((link, index) => (
+              <a 
+                key={index} 
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {link.name}
+              </a>
+            ))}
+          </div>
           
           {/* Mobile auth section */}
           <div className="mobile-auth">
