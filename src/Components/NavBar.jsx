@@ -23,11 +23,11 @@ const NavBar = () => {
   };
 
   const navLinks = [
-    { name: 'ABOUT', href: '#about' },
-    { name: 'BENEFITS', href: '#benefits' },
-    { name: 'PLATFORMS', href: '#platforms' },
-    { name: 'RESOURCES', href: '#resources' },
-    { name: 'CONTACT US', href: '#contact' }
+    { name: 'ABOUT', href: 'about' },
+    { name: 'BENEFITS', href: 'benefits' },
+    { name: 'PLATFORMS', href: 'platforms' },
+    { name: 'RESOURCES', href: 'resources' },
+    { name: 'CONTACT US', href: 'contact' }
   ];
 
   return (

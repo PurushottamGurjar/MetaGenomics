@@ -10,6 +10,7 @@ export const AuthProvider=({children})=>{
     );
 
     const [token,setToken]=useState(localStorage.getItem("token"));
+    
     const login=async(data)=>{
         const res=await loginApi(data);
         setUser(res.data.user);
