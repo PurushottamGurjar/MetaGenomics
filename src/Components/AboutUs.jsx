@@ -1,5 +1,7 @@
 import { Users, Target, Lightbulb, Award, Mail, Link, Code, MapPin, Briefcase } from "lucide-react";
 import "./AboutUs.css";
+import founderImage from '../assets/BHU image.jpg';
+import mentorImage from '../assets/bt-asimbikas.jpg';
 
 export default function AboutUs() {
   return (
@@ -39,7 +41,7 @@ export default function AboutUs() {
 
           <div className="about-founder-card">
             <div className="about-founder-image-wrapper">
-              <img src="/src/assets/Bhu image.jpg" alt="Purushottam Gurjar" className="about-founder-image" />
+              <img src={founderImage} alt="Purushottam Gurjar" className="about-founder-image" />
             </div>
             <div className="about-founder-info">
               <h3 className="about-founder-name">Purushottam Gurjar</h3>
@@ -83,7 +85,7 @@ export default function AboutUs() {
           <div className="about-mentor-card">
             <div className="about-mentor-content">
               <div className="about-mentor-image-wrapper">
-                <img src="/src/assets/bt-asimbikas.jpg" alt="Prof. Asim Bikas Das" className="about-mentor-image" />
+                <img src={mentorImage} alt="Prof. Asim Bikas Das" className="about-mentor-image" />
               </div>
               <div className="about-mentor-info">
                 <h3 className="about-mentor-name">Prof. Asim Bikas Das</h3>

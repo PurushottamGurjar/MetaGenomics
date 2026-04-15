@@ -1,5 +1,11 @@
 import { Code, Microscope, Users, Upload, MousePointer } from "lucide-react";
 import "./Benefits.css";
+import benefit1 from '../assets/benefit1.webp';
+import benefit2 from '../assets/benefit2.webp';
+import benefit3 from '../assets/benefit3.webp';
+import started1 from '../assets/started1.webp';
+import started2 from '../assets/started2.webp';
+import started3 from '../assets/started3.webp';
 
 export default function Benefits() {
   return (
@@ -14,7 +20,7 @@ export default function Benefits() {
         <div className="benefits-grid">
           <div className="benefits-card">
             <div className="benefits-image-wrapper">
-              <img src="/src/assets/benefit1.webp" alt="Bioinformaticians" className="benefits-image" />
+              <img src={benefit1} alt="Bioinformaticians" className="benefits-image" />
             </div>
             <h2 className="benefits-card-title">For Bioinformaticians</h2>
             <p className="benefits-card-text">
@@ -24,7 +30,7 @@ export default function Benefits() {
 
           <div className="benefits-card">
             <div className="benefits-image-wrapper">
-              <img src="/src/assets/benefit2.webp" alt="Biologists" className="benefits-image" />
+              <img src={benefit2} alt="Biologists" className="benefits-image" />
             </div>
             <h2 className="benefits-card-title">For Biologists</h2>
             <p className="benefits-card-text">
@@ -34,7 +40,7 @@ export default function Benefits() {
 
           <div className="benefits-card">
             <div className="benefits-image-wrapper">
-              <img src="/src/assets/benefit3.webp" alt="Managers and PIs" className="benefits-image" />
+              <img src={benefit3} alt="Managers and PIs" className="benefits-image" />
             </div>
             <h2 className="benefits-card-title">Zero Coding Requirement</h2>
             <p className="benefits-card-text">
@@ -53,7 +59,7 @@ export default function Benefits() {
                 <span className="started-step-number">Step 1</span>
               </div>
               <div className="started-image-wrapper">
-                <img src="/src/assets/started1.webp" alt="Register" className="started-image" />
+                <img src={started1} alt="Register" className="started-image" />
               </div>
               <h3 className="started-card-title">Register</h3>
               <p className="started-card-text">
@@ -66,7 +72,7 @@ export default function Benefits() {
                 <span className="started-step-number">Step 2</span>
               </div>
               <div className="started-image-wrapper">
-                <img src="/src/assets/started2.webp" alt="Upload data" className="started-image" />
+                <img src={started2} alt="Upload data" className="started-image" />
               </div>
               <h3 className="started-card-title">Upload your data</h3>
               <p className="started-card-text">
@@ -79,7 +85,7 @@ export default function Benefits() {
                 <span className="started-step-number">Step 3</span>
               </div>
               <div className="started-image-wrapper">
-                <img src="/src/assets/started3.webp" alt="Explore" className="started-image" />
+                <img src={started3} alt="Explore" className="started-image" />
               </div>
               <h3 className="started-card-title">Have fun exploring!</h3>
               <p className="started-card-text">
@@ -95,21 +101,21 @@ export default function Benefits() {
           <div className="features-grid">
             <div className="features-item">
               <div className="features-image-wrapper">
-                <img src="/src/assets/benefit3.webp" alt="Multiple Graphs" className="features-image" />
+                <img src={benefit3} alt="Multiple Graphs" className="features-image" />
               </div>
               <h3 className="features-item-title">Analyze Multiple Graphs</h3>
               <p className="features-item-text">Visualize complex datasets with interactive charts and plots</p>
             </div>
             <div className="features-item">
               <div className="features-image-wrapper">
-                <img src="/src/assets/benefit2.webp" alt="No Coding" className="features-image" />
+                <img src={benefit2} alt="No Coding" className="features-image" />
               </div>
               <h3 className="features-item-title">No Coding Required</h3>
               <p className="features-item-text">Perform PCA analysis and more without writing a single line of code</p>
             </div>
             <div className="features-item">
               <div className="features-image-wrapper">
-                <img src="/src/assets/benefit1.webp" alt="Single Click" className="features-image" />
+                <img src={benefit1} alt="Single Click" className="features-image" />
               </div>
               <h3 className="features-item-title">Data at Single Click</h3>
               <p className="features-item-text">Zero installation, everything runs on cloud infrastructure</p>
