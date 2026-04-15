@@ -1,0 +1,317 @@
+/* ============================================
+   BENEFITS - CUSTOM CSS STYLES
+   ============================================ */
+
+/* Main wrapper */
+.benefits-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* Container */
+.benefits-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+
+.benefits-header {
+  margin-bottom: 80px;
+}
+
+.benefits-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2563EB;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+/* ============================================
+   BENEFITS GRID
+   ============================================ */
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  margin-bottom: 128px;
+}
+
+@media (max-width: 1024px) {
+  .benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.benefits-card {
+  background-color: white;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.benefits-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 -10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+}
+
+.benefits-image-wrapper {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.benefits-image {
+  width: 256px;
+  height: 192px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.benefits-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a3a;
+  margin: 0 0 16px 0;
+  padding: 0;
+  text-align: center;
+}
+
+.benefits-card-text {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+/* ============================================
+   HOW TO GET STARTED SECTION
+   ============================================ */
+
+.started-section {
+  margin-bottom: 80px;
+}
+
+.started-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2563EB;
+  margin: 0 0 64px 0;
+  padding: 0;
+}
+
+.started-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 1024px) {
+  .started-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.started-card {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05), 0 -4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.started-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 10px 10px -5px rgba(0, 0, 0, 0.04), 0 -10px 10px -5px rgba(0, 0, 0, 0.04);
+  transform: translateY(-5px);
+}
+
+.started-step {
+  margin-bottom: 24px;
+}
+
+.started-step-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.started-image-wrapper {
+  margin-bottom: 32px;
+  display: flex;
+  justify-content: center;
+}
+
+.started-image {
+  width: 256px;
+  height: 192px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.started-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1e3a3a;
+  margin: 0 0 16px 0;
+  padding: 0;
+}
+
+.started-card-text {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   KEY FEATURES SECTION
+   ============================================ */
+
+.features-section {
+  background-color: #f9fafb;
+  border-radius: 16px;
+  padding: 48px 32px;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+}
+
+.features-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563EB;
+  margin: 0 0 48px 0;
+  padding: 0;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  max-width: 1024px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.features-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  transition: all 0.3s ease;
+}
+
+.features-item:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-2px);
+}
+
+.features-image-wrapper {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.features-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.features-item-title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  padding: 0;
+  color: #1e3a3a;
+}
+
+.features-item-text {
+  font-size: 16px;
+  color: #374151;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .benefits-container {
+    padding: 32px 16px;
+  }
+
+  .benefits-main-title,
+  .started-main-title {
+    font-size: 36px;
+  }
+
+  .benefits-card,
+  .started-card {
+    padding: 24px;
+  }
+
+  .benefits-image,
+  .started-image {
+    width: 100%;
+    max-width: 256px;
+    height: auto;
+  }
+
+  .benefits-card-title,
+  .started-card-title {
+    font-size: 20px;
+  }
+
+  .features-section {
+    padding: 32px 16px;
+  }
+
+  .features-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 640px) {
+  .benefits-main-title,
+  .started-main-title {
+    font-size: 28px;
+  }
+
+  .benefits-card-title,
+  .started-card-title {
+    font-size: 18px;
+  }
+
+  .benefits-card-text,
+  .started-card-text {
+    font-size: 14px;
+  }
+}

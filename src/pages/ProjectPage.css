@@ -1,0 +1,398 @@
+/* ============================================
+   OMICS PLAYGROUND - CUSTOM CSS STYLES
+   ============================================ */
+
+/* Main wrapper */
+.omics-page-wrapper {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #ffffff;
+  padding: 0;
+  margin: 0;
+}
+
+/* Page container */
+.omics-page-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 64px 32px;
+  box-sizing: border-box;
+}
+
+/* ============================================
+   HEADER SECTION
+   ============================================ */
+
+.omics-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.omics-main-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 0.04em;
+  margin: 0 0 12px 0;
+  padding: 0;
+  text-transform: uppercase;
+}
+
+.omics-title-divider {
+  width: 128px;
+  height: 2px;
+  background-color: #2563eb;
+  margin: 0 auto;
+}
+
+/* ============================================
+   CONTENT GRID
+   ============================================ */
+
+.omics-content-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+  margin-bottom: 80px;
+}
+
+@media (max-width: 1024px) {
+  .omics-content-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+/* ============================================
+   PLAYGROUND SECTION
+   ============================================ */
+
+.omics-playground-section {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.omics-section-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 0;
+  padding: 0;
+}
+
+/* Drop Zone */
+.omics-dropzone {
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 48px;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  cursor: pointer;
+}
+
+.omics-dropzone--active {
+  border-color: #2563eb;
+  background-color: #eff6ff;
+}
+
+.omics-dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.omics-icon-large {
+  width: 48px;
+  height: 48px;
+  color: #9ca3af;
+}
+
+.omics-dropzone--active .omics-icon-large {
+  color: #2563eb;
+}
+
+.omics-dropzone-text {
+  text-align: center;
+}
+
+.omics-file-label {
+  cursor: pointer;
+  display: block;
+}
+
+.omics-file-link {
+  color: #2563eb;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.omics-file-link:hover {
+  color: #1d4ed8;
+}
+
+.omics-file-subtext {
+  color: #4b5563;
+}
+
+.omics-file-input {
+  display: none;
+}
+
+.omics-file-name {
+  font-size: 14px;
+  color: #374151;
+  margin: 8px 0 0 0;
+  padding: 0;
+  font-weight: 500;
+}
+
+/* Upload Button */
+.omics-upload-btn {
+  width: 100%;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 600;
+  padding: 16px 24px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.omics-upload-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.omics-upload-btn:disabled {
+  background-color: #d1d5db;
+  cursor: not-allowed;
+}
+
+.omics-icon-small {
+  width: 20px;
+  height: 20px;
+}
+
+/* Analysis Grid */
+.omics-analysis-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .omics-analysis-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.omics-analysis-btn {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 8px;
+  padding: 16px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.omics-analysis-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.omics-icon-medium {
+  width: 24px;
+  height: 24px;
+}
+
+.omics-btn-label {
+  font-size: 12px;
+}
+
+/* ============================================
+   STATS SECTION
+   ============================================ */
+
+.omics-stats-section {
+  background-color: #f9fafb;
+  border-radius: 24px;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  text-align: center;
+  margin-bottom: 80px;
+  margin-top: 50px;
+}
+
+@media (max-width: 768px) {
+  .omics-stats-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+.omics-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.omics-stat-value {
+  font-size: 32px;
+  font-weight: 700;
+  color: #2563eb;
+  margin: 0;
+  padding: 0;
+}
+
+.omics-stat-label {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   CHARTS CONTAINER
+   ============================================ */
+
+.omics-charts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.omics-chart-section {
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.omics-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.omics-chart-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #38bdf8;
+  margin: 0;
+  padding: 0;
+}
+
+.omics-export-btn {
+  background-color: #2563eb;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.omics-export-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.omics-chart-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 400px;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 640px) {
+  .omics-page-container {
+    padding: 32px 16px;
+  }
+
+  .omics-main-title {
+    font-size: 36px;
+  }
+
+  .omics-section-title {
+    font-size: 28px;
+  }
+
+  .omics-dropzone {
+    padding: 32px;
+  }
+
+  .omics-analysis-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .omics-stats-section {
+    grid-template-columns: 1fr;
+  }
+
+  .omics-chart-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ============================================
+   LOADER / SPINNER STYLES
+   ============================================ */
+
+.omics-spinner-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+}
+
+.omics-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #2563eb;
+  border-radius: 50%;
+  animation: omics-spin 0.8s linear infinite;
+}
+
+@keyframes omics-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.omics-spinner-container p {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+}

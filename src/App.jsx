@@ -9,6 +9,9 @@ import Login from './Components/Login'
 import Register from './Components/Register'
 import ProtectedRoute from './Components/common/ProtectedRoute'
 import ProtectedTesting from './Components/ProtectedTesting'
+import ProjectPage from "./pages/ProjectPage"
+import AboutUs from './Components/AboutUs'
+import Benefits from './Components/Benefits'
 
 
 
@@ -19,17 +22,15 @@ const App = () => {
         <NavBar/>
         <Routes>
           <Route path="/home" element={<Home />} />
-          <Route path="/about" element={<NotFound />} />
-          <Route path="/contact" element={<NotFound />} />
-          <Route path="/benefits" element={<NotFound />} />
-          <Route path="/platforms" element={<NotFound />} />
-          <Route path="/resources" element={<NotFound />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/benefits" element={<Benefits />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-
+          
           <Route element={<ProtectedRoute/>}>
             <Route path="/login-testing" element={<ProtectedTesting/>}/>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<ProjectPage />} />
+            <Route path="/platforms" element={<ProjectPage />} />
           </Route>
 
         </Routes>
