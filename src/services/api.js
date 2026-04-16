@@ -1,4 +1,4 @@
-const BASE_URL = "https://metagenomics-backend.onrender.com/api/projects";
+const BASE_URL = "http://localhost:5000/api/projects";
 
 export const fetchPCA = async (projectId, token) => {
   const res = await fetch(`${BASE_URL}/pca`, {

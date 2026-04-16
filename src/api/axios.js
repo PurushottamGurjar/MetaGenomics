@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const api=axios.create({
     baseURL:"https://metagenomics-backend.onrender.com/api"
+    // baseURL:"https://localhost:5000/api"
 });
 
 api.interceptors.request.use((config)=>{

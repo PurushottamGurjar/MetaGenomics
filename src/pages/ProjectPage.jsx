@@ -13,8 +13,11 @@ const ProjectPage = () => {
   const [fileName, setFileName] = useState("");
   const [isDragging, setIsDragging] = useState(false);
   const [pca, setPCA] = useState([]);
+  const [clusters, setClusters] = useState([]);
+  const [variance, setVariance] = useState([]);
+  const [centroids, setCentroids] = useState([]);
   const [volcano, setVolcano] = useState({ logFC: [], pvals: [] });
-  const [heatmap, setHeatmap] = useState([]);
+  const [heatmap, setHeatmap] = useState();
   const [loadingPCA, setLoadingPCA] = useState(false);
   const [loadingVolcano, setLoadingVolcano] = useState(false);
   const [loadingHeatmap, setLoadingHeatmap] = useState(false);
@@ -66,6 +69,10 @@ const ProjectPage = () => {
     try {
       const data = await fetchPCA(projectId, token);
       setPCA(data.pca);
+      setClusters(data.clusters);
+      setVariance(data.variance);
+      setCentroids(data.centroids);
+      console.log("Here is your PCA Data", data);
     } finally {
       setLoadingPCA(false);
     }
@@ -85,7 +92,7 @@ const ProjectPage = () => {
     setLoadingHeatmap(true);
     try {
       const data = await fetchHeatmap(projectId, token);
-      setHeatmap(data.matrix);
+      setHeatmap(data);
     } finally {
       setLoadingHeatmap(false);
     }
@@ -117,9 +124,9 @@ const ProjectPage = () => {
 
       // const pcaData = await fetchPCA(projectId, token);
       // setPCA(pcaData.pca);
-      handlePCA();
-      handleVolcano();
-      handleHeatmap();
+      // handlePCA();
+      // handleVolcano();
+      // handleHeatmap();
     } finally {
       setUploadingFile(false);
     }
@@ -165,21 +172,39 @@ const ProjectPage = () => {
             className="omics-upload-btn"
           >
             <Play className="omics-icon-small" />
-            {uploadingFile ? "Uploading..." : "Upload & Analyze"}
+            {uploadingFile ? "Uploading..." : "Upload File"}
           </button>
 
           <div className="omics-analysis-grid">
-            <button onClick={handlePCA} disabled={loadingPCA} className="omics-analysis-btn">
+            <button
+              onClick={handlePCA}
+              disabled={loadingPCA}
+              className="omics-analysis-btn"
+            >
               <BarChart3 className="omics-icon-medium" />
-              <span className="omics-btn-label">{loadingPCA ? "Loading..." : "PCA"}</span>
+              <span className="omics-btn-label">
+                {loadingPCA ? "Loading..." : "PCA"}
+              </span>
             </button>
-            <button onClick={handleVolcano} disabled={loadingVolcano} className="omics-analysis-btn">
+            <button
+              onClick={handleVolcano}
+              disabled={loadingVolcano}
+              className="omics-analysis-btn"
+            >
               <TrendingUp className="omics-icon-medium" />
-              <span className="omics-btn-label">{loadingVolcano ? "Loading..." : "Volcano"}</span>
+              <span className="omics-btn-label">
+                {loadingVolcano ? "Loading..." : "Volcano"}
+              </span>
             </button>
-            <button onClick={handleHeatmap} disabled={loadingHeatmap} className="omics-analysis-btn">
+            <button
+              onClick={handleHeatmap}
+              disabled={loadingHeatmap}
+              className="omics-analysis-btn"
+            >
               <Grid3x3 className="omics-icon-medium" />
-              <span className="omics-btn-label">{loadingHeatmap ? "Loading..." : "Heatmap"}</span>
+              <span className="omics-btn-label">
+                {loadingHeatmap ? "Loading..." : "Heatmap"}
+              </span>
             </button>
           </div>
         </div>
@@ -207,7 +232,13 @@ const ProjectPage = () => {
                     <p>Analyzing PCA data...</p>
                   </div>
                 ) : (
-                  <PCAChart data={pca} ref={PCAchartRef} />
+                  <PCAChart
+                    data={pca}
+                    clusters={clusters}
+                    variance={variance}
+                    centroids={centroids}
+                    ref={PCAchartRef}
+                  />
                 )}
               </div>
             </div>
@@ -247,7 +278,7 @@ const ProjectPage = () => {
           )}
 
           {/* Heatmap */}
-          {(heatmap.length > 0 || loadingHeatmap) && (
+          {(heatmap || loadingHeatmap) && (
             <div className="omics-chart-section">
               <div className="omics-chart-header">
                 <h3 className="omics-chart-title">🔥 Heatmap</h3>
@@ -266,8 +297,14 @@ const ProjectPage = () => {
                     <div className="omics-spinner"></div>
                     <p>Analyzing Heatmap data...</p>
                   </div>
-                ) : (
-                  <HeatmapChart matrix={heatmap} ref={HeatMapRef} />
+                ) :heatmap ? (
+                  <HeatmapChart
+                    matrix={heatmap.matrix}
+                    rows={heatmap.rows}
+                    cols={heatmap.cols}
+                  />
+                ):(
+                  null
                 )}
               </div>
             </div>
@@ -288,8 +325,6 @@ const ProjectPage = () => {
             <div className="omics-stat-label">Based Platform</div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );
