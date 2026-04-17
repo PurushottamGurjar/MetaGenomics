@@ -7,6 +7,7 @@ import { fetchPCA, fetchVolcano, fetchHeatmap } from "../services/api";
 import "./ProjectPage.css";
 import html2canvas from "html2canvas";
 import jsPDF from "jspdf";
+import SupervisedGraphs from "./SupervisedGraphs";
 
 const ProjectPage = () => {
   const [file, setFile] = useState(null);
@@ -326,6 +327,7 @@ const ProjectPage = () => {
           </div>
         </div>
       </div>
+      <SupervisedGraphs />
     </div>
   );
 };
